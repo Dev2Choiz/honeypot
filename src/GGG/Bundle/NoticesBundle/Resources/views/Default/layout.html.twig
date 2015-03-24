@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1"/>
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ asset('bundles/gggnotices/css/style.css') }}"/>
+{% endblock %}
+
+<title>
+{% block title %}Honeypot-1{% endblock %}
+</title>
+
+</head>
+<body>
+
+<header>
+<a href="{{ path('ggg_notices_homepage') }}" title="retour à l'accueil"/>
+MON-ASPIRATEUR.FR
+<img src="{{ asset('bundles/gggnotices/images/logo.jpg') }}" alt="logo" title="bienvenue sur mon-aspirateur.fr"/>
+</a>
+{% block header %}
+
+{% endblock %}
+</header>	
+
+<div class="wrapper">
+{% block wrapper %}
+
+
+
+{% block h1 %}
+<h1>
+Trouver la notice de votre objet en 3 clics
+</h1>
+{% endblock %}
+
+{% for message in app.session.flashbag.get('erreur') %}
+<p class="erreur">
+	Info: {{ message|raw }}
+</p>
+{% endfor %}
+
+
+<ul class="menu">
+
+<li><a href="{{ path('ggg_notices_marques') }}">Toutes les marques</a></li>
+<li><a href="{{ path('ggg_notices_categories') }}">Toutes les catégories</a></li>
+</ul>
+
+
+
+{% block content %}
+
+LAYOUT DE BASE
+
+{% endblock %}
+
+</div><!-- fin wrapper-->
+
+{% endblock %}
+</body>
+</html>

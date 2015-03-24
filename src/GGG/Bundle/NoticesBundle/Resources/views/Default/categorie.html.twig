@@ -1,0 +1,38 @@
+{% extends "GGGNoticesBundle:Default:layout.html.twig" %}
+{% block title %}
+{{ nom }}
+{% endblock %}
+
+
+
+{% block wrapper %}
+
+{% block h1 %}
+<h1>Voici tous les appareils de la categorie {{ nom }}</h1>
+{% endblock %}
+
+
+{% for message in app.session.flashbag.get('erreur') %}
+<p class="erreur">{{ message|raw }}</p>
+{% endfor %}
+
+<h3>Filtrer par marques</h3>
+{{ form(form )}}
+
+{% if marqueNom is not null %}
+<p class="info">{{ nom|capitalize }} de la marque {{ marqueNom|upper }}</p>
+{% endif %}
+{% for appareil in appareils %}
+<a href="{{ path('ggg_notices_appareil_id', { id: appareil.id }) }}">
+<div class="appareil">
+<img src="/bundles/gggnotices/images/{{ appareil.photo }}.jpg" alt="{{ appareil.nom }}"/>
+<strong class="nom">{{ appareil.nom|upper }}</strong> 
+<p class="description">{{ appareil.description }}</p>
+</div>
+</a>
+{% endfor %}
+
+<!--a href="{{ path('ggg_notices_appareil_id',{ 'id': 50 }) }}">toto</a-->
+
+
+{% endblock %}

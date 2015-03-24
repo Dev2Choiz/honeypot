@@ -1,0 +1,3 @@
+ggg_notices:
+    resource: "@GGGNoticesBundle/Resources/config/routing.yml"
+    prefix:   /

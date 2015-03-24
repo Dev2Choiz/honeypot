@@ -1,0 +1,152 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+	color: blue;
+}
+
+a:visited{
+	text-decoration: none;
+	color: blue;
+}
+
+header{
+	width: 97%;
+	background-color: #FFF;
+	color: #22A;
+	font-size: 30px;
+	padding: 2%;
+	text-align: center;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #559;
+	font-family: "Calibri Light", sans-serif;
+}
+
+header img{
+	width: 128px;
+	height: 128px;
+	display: inline-block;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+
+.wrapper{
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	font-family: "Calibri Light", sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+
+ul{
+	list-style-type: none;
+}
+
+h1{
+	color: #E7A;
+	font-size: 18px;
+	padding: 2px;
+	margin: 5px;
+}
+
+
+.appareil{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+	border: 1px solid silver;
+	background-color: #FFF;
+	padding: 5px;
+	min-width: 300px;
+	width: 30%;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.appareil .nom{
+	display: block;
+	color: #A7E;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.appareil img{
+	display: block;
+	width: 256px;
+	height: 256px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.appareil .description{
+	padding: 2px;
+	line-height: 20px;
+}
+
+.appareil a{
+	display: block;
+	padding: 10px;
+	background-color: #1E90FF;
+	color: white;
+	text-decoration: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+	border: 1px solid white;
+}
+
+.appareil a:hover{
+	color: white;
+	background-color: #0000CD;
+	font-size: 15px;
+}
+
+.appareil a:visited{
+	color: white;
+	background-color: #0000CD;
+}
+
+.erreur{
+	color: #FFE;
+	background-color: #F60;
+	border: solid 0px black;
+	border-radius: 2px;
+	padding: 6px;
+	font-size: 13px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+
+.info{
+	color: #222;
+	background-color: #EEF;
+	border: solid 0px #66D;
+	border-radius: 2px;
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 50%;
+}
+
+.appareil .info{
+	width: 80%;
+}

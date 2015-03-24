@@ -1,0 +1,36 @@
+{% extends "GGGNoticesBundle:Default:layout.html.twig" %}
+{% block title %}
+Toutes les marques
+{% endblock %}
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ asset('bundles/gggnotices/css/style_liste.css') }}"/>
+{% endblock %}
+
+
+{% block header %}
+<nav><a href="{{ path('ggg_notices_homepage') }}"</nav>
+{% endblock %}
+
+
+{% block wrapper %}
+
+{% block h1 %}
+<h1>Retrouver votre matériel en commençant par la marque</h1>
+{% endblock %}
+
+{% for message in app.session.flashbag.get('erreur') %}
+<p class="erreur">
+	Info: {{ message|raw }}
+</p>
+{% endfor %}
+
+<ul>
+{% for marque in marques %}
+<li><a href="{{ path('ggg_notices_marques_nom',{ 'nom': marque.nom }) }}">{{ marque.nom }}</a></li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}

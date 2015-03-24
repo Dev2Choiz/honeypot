@@ -1,0 +1,33 @@
+{% extends "GGGNoticesBundle:Default:layout.html.twig" %}
+
+
+{% block wrapper %}
+
+
+{% block h1 %}
+<h1> Notice pour {{ appareil.nom }} de {{ appareil.marque.nom|upper }}</h1>
+{% endblock %}
+
+<div class="appareil">
+<img src="/bundles/gggnotices/images/{{ appareil.photo }}.jpg" alt="{{ appareil.nom }}"/>
+<p class="description">{{ appareil.description }}</p>
+
+{% if appareil.notice.fichier is defined %}
+
+<a href="/bundles/gggnotices/notices/{{ appareil.notice.fichier }}.pdf" title="notice pour {{ appareil.nom }}">
+Télécharger la notice de {{ appareil.categorie.nom|upper }} {{ appareil.marque.nom|upper }} {{ appareil.nom|upper }}
+</a>
+
+{% else %}
+<p class="info">
+Nous n'avons pas encore de notice pour 
+{{ appareil.categorie.nom|upper }} 
+{{ appareil.marque.nom|upper }} 
+{{ appareil.nom|upper }}
+</p>
+{% endif %}
+
+</div>
+
+
+{% endblock %}
