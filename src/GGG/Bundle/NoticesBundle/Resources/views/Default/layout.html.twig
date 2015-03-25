@@ -20,6 +20,10 @@
 MON-ASPIRATEUR.FR
 <img src="{{ asset('bundles/gggnotices/images/logo.jpg') }}" alt="logo" title="bienvenue sur mon-aspirateur.fr"/>
 </a>
+
+{{ render(controller("GGGUserBundle:Security:login")) }}
+
+
 {% block header %}
 
 {% endblock %}
@@ -37,9 +41,7 @@ Trouver la notice de votre objet en 3 clics
 {% endblock %}
 
 {% for message in app.session.flashbag.get('erreur') %}
-<p class="erreur">
-	Info: {{ message|raw }}
-</p>
+<p class="erreur">{{ message|raw }}</p>
 {% endfor %}
 
 

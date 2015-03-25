@@ -17,7 +17,7 @@
 {% endfor %}
 
 <h3>Filtrer par categories</h3>
-{{ form(form )}}
+{{ form(form_filtre) }}
 
 {% if categorieNom is not null %}
 <p class="info">{{ categorieNom|capitalize }} de la marque {{ nom|upper }}</p>

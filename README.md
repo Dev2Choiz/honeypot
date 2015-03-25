@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -168,3 +169,12 @@ Enjoy!
 [11]: http://symfony.com/doc/2.4/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.4/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.4/bundles/SensioGeneratorBundle/index.html
+=======
+# honeypot
+projet honeypot ggg
+
+Projet de fin d'étude.
+
+Langage: PHP
+Outils: Symfony 2, composer
+>>>>>>> 3fc5942fc5c930455953ee6cdcf33cb78b5060ca

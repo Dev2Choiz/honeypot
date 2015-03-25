@@ -128,10 +128,10 @@ class DefaultController extends Controller
         return $this->redirect($this->generateUrl('ggg_notices_categories'));
     	}
 
-    	return $this->render('GGGNoticesBundle:Default:categorie.html.twig',array( "appareils" => $appareils, 
-    																                    "nom"  => $nom,
-                                                                                        "form" => $form->createView(),
-                                                                                        "marqueNom" => $marqueNom));
+    	return $this->render('GGGNoticesBundle:Default:categorie.html.twig',array( "appareils"   => $appareils, 
+    																               "nom"         => $nom,
+                                                                                   "form_filtre" => $form->createView(),
+                                                                                   "marqueNom"   => $marqueNom));
     }
 
     /**
@@ -221,10 +221,10 @@ class DefaultController extends Controller
 
         
 
-    	return $this->render('GGGNoticesBundle:Default:marque.html.twig',array(	"appareils" => $appareils, 
-    																				 "nom" 	=> $nom,
-                                                                                     "form" => $form->createView(),
-                                                                                     "categorieNom" => $categorieNom));
+    	return $this->render('GGGNoticesBundle:Default:marque.html.twig',array(	"appareils"    => $appareils, 
+    																			"nom" 	       => $nom,
+                                                                                "form_filtre"  => $form->createView(),
+                                                                                "categorieNom" => $categorieNom));
     }
 
 

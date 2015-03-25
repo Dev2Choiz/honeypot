@@ -73,7 +73,7 @@ class __TwigTemplate_bf149a59df48e61ecf7785ba685b0e89cc96c480018b14aeb9a477ecf78
 <h3>Filtrer par categories</h3>
 ";
         // line 20
-        echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "form"), 'form');
+        echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "form_filtre"), 'form');
         echo "
 
 ";
