@@ -29,12 +29,8 @@ class SecurityController extends Controller
 			$session->remove(SecurityContext::AUTHENTICATION_ERROR);
 		}
 
-		return $this->render('GGGUserBundle:Security:login.html.twig', array( "last_username" => $session->get(SecurityContext::LAST_USERNAME),
-																		   "error" => $error
-
-
-
-			));
+		return $this->render('GGGUserBundle:Security:login.html.twig', array( "last_username" 	=> $session->get(SecurityContext::LAST_USERNAME),
+																		      "error" 			=> $error));
 	}
 
 

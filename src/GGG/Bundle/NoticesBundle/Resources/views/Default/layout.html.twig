@@ -21,15 +21,21 @@ MON-ASPIRATEUR.FR
 <img src="{{ asset('bundles/gggnotices/images/logo.jpg') }}" alt="logo" title="bienvenue sur mon-aspirateur.fr"/>
 </a>
 
-{{ render(controller("GGGUserBundle:Security:login")) }}
 
+{% block connexion %}
 
-{% block header %}
-
+{% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+<p>Bienvenue {{ app.user.username }}</p>
+{% else %}
+<form action="{{ path('login_check') }}" method="post">
+<input type="text" name="_username" placeholder="pseudo ou mail" />
+<input type="password" name="_password" placeholder="password" />
+<input type="submit" value="Connexion"/>
+</form>
+{% endif %}
 {% endblock %}
-</header>	
 
-<div class="wrapper">
+</header><div class="wrapper">
 {% block wrapper %}
 
 

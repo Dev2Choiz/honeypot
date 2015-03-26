@@ -12,7 +12,7 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
         $this->blocks = array(
             'stylesheets' => array($this, 'block_stylesheets'),
             'title' => array($this, 'block_title'),
-            'header' => array($this, 'block_header'),
+            'connexion' => array($this, 'block_connexion'),
             'wrapper' => array($this, 'block_wrapper'),
             'h1' => array($this, 'block_h1'),
             'content' => array($this, 'block_content'),
@@ -55,23 +55,17 @@ MON-ASPIRATEUR.FR
         echo "\" alt=\"logo\" title=\"bienvenue sur mon-aspirateur.fr\"/>
 </a>
 
+
 ";
-        // line 24
-        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("GGGUserBundle:Security:login"));
+        // line 25
+        $this->displayBlock('connexion', $context, $blocks);
+        // line 37
         echo "
-
-
+</header><div class=\"wrapper\">
 ";
-        // line 27
-        $this->displayBlock('header', $context, $blocks);
-        // line 30
-        echo "</header>\t
-
-<div class=\"wrapper\">
-";
-        // line 33
+        // line 39
         $this->displayBlock('wrapper', $context, $blocks);
-        // line 65
+        // line 71
         echo "</body>
 </html>";
     }
@@ -92,32 +86,50 @@ MON-ASPIRATEUR.FR
         echo "Honeypot-1";
     }
 
-    // line 27
-    public function block_header($context, array $blocks = array())
+    // line 25
+    public function block_connexion($context, array $blocks = array())
     {
-        // line 28
+        // line 26
         echo "
 ";
+        // line 27
+        if (($this->env->getExtension('security')->isGranted("ROLE_USER") || $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
+            // line 28
+            echo "<p>Bienvenue ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user", array()), "username", array()), "html", null, true);
+            echo "</p>
+";
+        } else {
+            // line 30
+            echo "<form action=\"";
+            echo $this->env->getExtension('routing')->getPath("login_check");
+            echo "\" method=\"post\">
+<input type=\"text\" name=\"_username\" placeholder=\"pseudo ou mail\" />
+<input type=\"password\" name=\"_password\" placeholder=\"password\" />
+<input type=\"submit\" value=\"Connexion\"/>
+</form>
+";
+        }
     }
 
-    // line 33
+    // line 39
     public function block_wrapper($context, array $blocks = array())
     {
-        // line 34
+        // line 40
         echo "
 
 
-";
-        // line 37
-        $this->displayBlock('h1', $context, $blocks);
-        // line 42
-        echo "
 ";
         // line 43
+        $this->displayBlock('h1', $context, $blocks);
+        // line 48
+        echo "
+";
+        // line 49
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session", array()), "flashbag", array()), "get", array(0 => "erreur"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 44
+            // line 50
             echo "<p class=\"erreur\">";
             echo $context["message"];
             echo "</p>
@@ -126,17 +138,17 @@ MON-ASPIRATEUR.FR
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 52
         echo "
 
 <ul class=\"menu\">
 
 <li><a href=\"";
-        // line 50
+        // line 56
         echo $this->env->getExtension('routing')->getPath("ggg_notices_marques");
         echo "\">Toutes les marques</a></li>
 <li><a href=\"";
-        // line 51
+        // line 57
         echo $this->env->getExtension('routing')->getPath("ggg_notices_categories");
         echo "\">Toutes les catégories</a></li>
 </ul>
@@ -144,29 +156,29 @@ MON-ASPIRATEUR.FR
 
 
 ";
-        // line 56
+        // line 62
         $this->displayBlock('content', $context, $blocks);
-        // line 61
+        // line 67
         echo "
 </div><!-- fin wrapper-->
 
 ";
     }
 
-    // line 37
+    // line 43
     public function block_h1($context, array $blocks = array())
     {
-        // line 38
+        // line 44
         echo "<h1>
 Trouver la notice de votre objet en 3 clics
 </h1>
 ";
     }
 
-    // line 56
+    // line 62
     public function block_content($context, array $blocks = array())
     {
-        // line 57
+        // line 63
         echo "
 LAYOUT DE BASE
 
@@ -185,6 +197,6 @@ LAYOUT DE BASE
 
     public function getDebugInfo()
     {
-        return array (  170 => 57,  167 => 56,  160 => 38,  157 => 37,  150 => 61,  148 => 56,  140 => 51,  136 => 50,  130 => 46,  121 => 44,  117 => 43,  114 => 42,  112 => 37,  107 => 34,  104 => 33,  99 => 28,  96 => 27,  90 => 12,  83 => 8,  80 => 7,  75 => 65,  73 => 33,  68 => 30,  66 => 27,  60 => 24,  54 => 21,  49 => 19,  41 => 13,  39 => 12,  35 => 10,  33 => 7,  25 => 1,);
+        return array (  182 => 63,  179 => 62,  172 => 44,  169 => 43,  162 => 67,  160 => 62,  152 => 57,  148 => 56,  142 => 52,  133 => 50,  129 => 49,  126 => 48,  124 => 43,  119 => 40,  116 => 39,  104 => 30,  98 => 28,  96 => 27,  93 => 26,  90 => 25,  84 => 12,  77 => 8,  74 => 7,  69 => 71,  67 => 39,  63 => 37,  61 => 25,  54 => 21,  49 => 19,  41 => 13,  39 => 12,  35 => 10,  33 => 7,  25 => 1,);
     }
 }

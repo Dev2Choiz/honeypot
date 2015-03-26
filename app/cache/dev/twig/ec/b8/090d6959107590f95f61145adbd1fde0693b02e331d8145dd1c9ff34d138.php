@@ -104,6 +104,8 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
             echo "\"/>
 <strong class=\"nom\">";
             // line 29
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute($context["appareil"], "marque", array()), "nom", array())), "html", null, true);
+            echo " ";
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["appareil"], "nom", array())), "html", null, true);
             echo "</strong> 
 <p class=\"description\">";
@@ -150,6 +152,6 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
 
     public function getDebugInfo()
     {
-        return array (  135 => 11,  132 => 10,  124 => 35,  121 => 34,  111 => 30,  107 => 29,  101 => 28,  95 => 26,  91 => 25,  83 => 23,  81 => 22,  76 => 20,  72 => 18,  63 => 16,  59 => 15,  55 => 13,  53 => 10,  50 => 9,  47 => 8,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  137 => 11,  134 => 10,  126 => 35,  123 => 34,  113 => 30,  107 => 29,  101 => 28,  95 => 26,  91 => 25,  83 => 23,  81 => 22,  76 => 20,  72 => 18,  63 => 16,  59 => 15,  55 => 13,  53 => 10,  50 => 9,  47 => 8,  41 => 3,  38 => 2,  11 => 1,);
     }
 }

@@ -18,16 +18,19 @@ a:visited{
 }
 
 header{
-	width: 97%;
-	background-color: #FFF;
+	width: 100%;
+	/*background-image: url('/bundles/gggnotices/images/back_header.png');
+	background-repeat: no-repeat;
+	background-size: 120% 100%;*/
 	color: #22A;
 	font-size: 30px;
-	padding: 2%;
+	padding: 0px;
 	text-align: center;
 	border-width: 0 0 1px 0;
 	border-style: solid;
 	border-color: #559;
 	font-family: "Calibri Light", sans-serif;
+	margin: 0px;
 }
 
 header img{
@@ -41,10 +44,19 @@ header img{
 .wrapper{
 	margin-right: auto;
 	margin-left: auto;
-	width: 80%;
+	margin-top: 0px;
+	width: 100%;
+	min-height: 500px;
 	font-family: "Calibri Light", sans-serif;
+	padding: 0px;
 	font-size: 16px;
 	text-align: center;
+	background-image: url('/bundles/gggnotices/images/fond.png');
+	background-size: 80% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 0% 0px;
+	background-color: ;
 }
 
 ul{
@@ -55,7 +67,7 @@ h1{
 	color: #E7A;
 	font-size: 18px;
 	padding: 2px;
-	margin: 5px;
+	margin: 0px;
 }
 
 
