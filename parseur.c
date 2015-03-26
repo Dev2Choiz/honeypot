@@ -1,4 +1,4 @@
-/*** Ecrit par GRANDPIERRE Mathieu a.k.a TaErG pour OLD Corporation ***/
+/*** Ecrit par TaErG pour OLD Corporation ***/
 
 
 #include <stdio.h>
