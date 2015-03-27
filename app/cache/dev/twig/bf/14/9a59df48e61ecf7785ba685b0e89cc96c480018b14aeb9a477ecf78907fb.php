@@ -108,10 +108,10 @@ class __TwigTemplate_bf149a59df48e61ecf7785ba685b0e89cc96c480018b14aeb9a477ecf78
             echo " ";
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["appareil"], "nom", array())), "html", null, true);
             echo "</strong> 
-<p class=\"description\">";
+<!--p class=\"description\">";
             // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["appareil"], "description", array()), "html", null, true);
-            echo "</p>
+            echo "</p-->
 </div>
 </a>
 ";

@@ -51,14 +51,14 @@ class __TwigTemplate_48035c58f4c0e617c7ad6bff3d58e3e05cf82a31d9b66c9f7f55145c03f
         echo ".jpg\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "appareil"), "nom", array()), "html", null, true);
         echo "\"/>
-<p class=\"description\">";
+<!--p class=\"description\">";
         // line 13
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "appareil"), "description", array()), "html", null, true);
-        echo "</p>
+        echo "</p-->
 
 ";
         // line 15
-        if ($this->getAttribute($this->getAttribute($this->getContext($context, "appareil", true), "notice", array(), "any", false, true), "fichier", array(), "any", true, true)) {
+        if (($this->env->getExtension('security')->isGranted("ROLE_USER") && $this->getAttribute($this->getAttribute($this->getContext($context, "appareil", true), "notice", array(), "any", false, true), "fichier", array(), "any", true, true))) {
             // line 16
             echo "
 <a href=\"/bundles/gggnotices/notices/";
@@ -76,28 +76,32 @@ Télécharger la notice de ";
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getContext($context, "appareil"), "nom", array())), "html", null, true);
             echo "
 </a>
-
+";
+        } elseif ((($this->env->getExtension('security')->isGranted("ROLE_USER") == false) && $this->getAttribute($this->getAttribute(        // line 20
+$this->getContext($context, "appareil", true), "notice", array(), "any", false, true), "fichier", array(), "any", true, true))) {
+            // line 21
+            echo "<p class=\"info\">veuillez vous connecter pour consulter ou télécharger le reste de la notice</p>
 ";
         } else {
-            // line 22
-            echo "<p class=\"info\">
+            // line 23
+            echo "<p class=\"error\">
 Nous n'avons pas encore de notice pour 
 ";
-            // line 24
+            // line 25
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "appareil"), "categorie", array()), "nom", array())), "html", null, true);
             echo " 
 ";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "appareil"), "marque", array()), "nom", array())), "html", null, true);
             echo " 
 ";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getContext($context, "appareil"), "nom", array())), "html", null, true);
             echo "
 </p>
 ";
         }
-        // line 29
+        // line 30
         echo "
 </div>
 
@@ -129,6 +133,6 @@ Nous n'avons pas encore de notice pour
 
     public function getDebugInfo()
     {
-        return array (  112 => 8,  109 => 7,  101 => 29,  95 => 26,  91 => 25,  87 => 24,  83 => 22,  72 => 18,  66 => 17,  63 => 16,  61 => 15,  56 => 13,  50 => 12,  46 => 10,  44 => 7,  40 => 5,  37 => 4,  11 => 1,);
+        return array (  116 => 8,  113 => 7,  105 => 30,  99 => 27,  95 => 26,  91 => 25,  87 => 23,  83 => 21,  81 => 20,  72 => 18,  66 => 17,  63 => 16,  61 => 15,  56 => 13,  50 => 12,  46 => 10,  44 => 7,  40 => 5,  37 => 4,  11 => 1,);
     }
 }
