@@ -13,6 +13,7 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
             'stylesheets' => array($this, 'block_stylesheets'),
             'title' => array($this, 'block_title'),
             'connexion' => array($this, 'block_connexion'),
+            'menu' => array($this, 'block_menu'),
             'wrapper' => array($this, 'block_wrapper'),
             'h1' => array($this, 'block_h1'),
             'content' => array($this, 'block_content'),
@@ -44,28 +45,33 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
 <body>
 
 <header>
-<a href=\"";
-        // line 19
-        echo $this->env->getExtension('routing')->getPath("ggg_notices_homepage");
-        echo "\" title=\"retour à l'accueil\"/>
+
 MON-ASPIRATEUR.FR
 <img src=\"";
         // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/gggnotices/images/logo.jpg"), "html", null, true);
         echo "\" alt=\"logo\" title=\"bienvenue sur mon-aspirateur.fr\"/>
-</a>
 
 
 ";
-        // line 25
+        // line 24
         $this->displayBlock('connexion', $context, $blocks);
-        // line 37
+        // line 36
         echo "
-</header><div class=\"wrapper\">
+
 ";
-        // line 39
+        // line 38
+        $this->displayBlock('menu', $context, $blocks);
+        // line 48
+        echo "
+
+</header>
+
+<div class=\"wrapper\">
+";
+        // line 53
         $this->displayBlock('wrapper', $context, $blocks);
-        // line 71
+        // line 81
         echo "</body>
 </html>";
     }
@@ -86,21 +92,21 @@ MON-ASPIRATEUR.FR
         echo "Honeypot-1";
     }
 
-    // line 25
+    // line 24
     public function block_connexion($context, array $blocks = array())
     {
-        // line 26
+        // line 25
         echo "
 ";
-        // line 27
+        // line 26
         if (($this->env->getExtension('security')->isGranted("ROLE_USER") || $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
-            // line 28
+            // line 27
             echo "<p>Bienvenue ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user", array()), "username", array()), "html", null, true);
             echo "</p>
 ";
         } else {
-            // line 30
+            // line 29
             echo "<form action=\"";
             echo $this->env->getExtension('routing')->getPath("login_check");
             echo "\" method=\"post\">
@@ -112,24 +118,48 @@ MON-ASPIRATEUR.FR
         }
     }
 
-    // line 39
+    // line 38
+    public function block_menu($context, array $blocks = array())
+    {
+        // line 39
+        echo "<div class=\"menu\">
+<ul>
+<li><a href=\"";
+        // line 41
+        echo $this->env->getExtension('routing')->getPath("ggg_notices_homepage");
+        echo "\" \ttitle=\"retour à l'accueil\"/>Accueil</a></li>
+<li><a href=\"";
+        // line 42
+        echo $this->env->getExtension('routing')->getPath("ggg_notices_marques");
+        echo "\" \ttitle=\"trier par marques\">Marques</a></li>
+<li><a href=\"";
+        // line 43
+        echo $this->env->getExtension('routing')->getPath("ggg_notices_categories");
+        echo "\"  title=\"trier par catégories\">Catégories</a></li>
+</ul>
+</div>
+
+";
+    }
+
+    // line 53
     public function block_wrapper($context, array $blocks = array())
     {
-        // line 40
+        // line 54
         echo "
 
 
 ";
-        // line 43
+        // line 57
         $this->displayBlock('h1', $context, $blocks);
-        // line 48
+        // line 62
         echo "
 ";
-        // line 49
+        // line 63
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session", array()), "flashbag", array()), "get", array(0 => "erreur"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 50
+            // line 64
             echo "<p class=\"erreur\">";
             echo $context["message"];
             echo "</p>
@@ -138,47 +168,37 @@ MON-ASPIRATEUR.FR
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 52
+        // line 66
         echo "
 
-<ul class=\"menu\">
 
-<li><a href=\"";
-        // line 56
-        echo $this->env->getExtension('routing')->getPath("ggg_notices_marques");
-        echo "\">Toutes les marques</a></li>
-<li><a href=\"";
-        // line 57
-        echo $this->env->getExtension('routing')->getPath("ggg_notices_categories");
-        echo "\">Toutes les catégories</a></li>
-</ul>
 
 
 
 ";
-        // line 62
+        // line 72
         $this->displayBlock('content', $context, $blocks);
-        // line 67
+        // line 77
         echo "
 </div><!-- fin wrapper-->
 
 ";
     }
 
-    // line 43
+    // line 57
     public function block_h1($context, array $blocks = array())
     {
-        // line 44
+        // line 58
         echo "<h1>
 Trouver la notice de votre objet en 3 clics
 </h1>
 ";
     }
 
-    // line 62
+    // line 72
     public function block_content($context, array $blocks = array())
     {
-        // line 63
+        // line 73
         echo "
 LAYOUT DE BASE
 
@@ -197,6 +217,6 @@ LAYOUT DE BASE
 
     public function getDebugInfo()
     {
-        return array (  182 => 63,  179 => 62,  172 => 44,  169 => 43,  162 => 67,  160 => 62,  152 => 57,  148 => 56,  142 => 52,  133 => 50,  129 => 49,  126 => 48,  124 => 43,  119 => 40,  116 => 39,  104 => 30,  98 => 28,  96 => 27,  93 => 26,  90 => 25,  84 => 12,  77 => 8,  74 => 7,  69 => 71,  67 => 39,  63 => 37,  61 => 25,  54 => 21,  49 => 19,  41 => 13,  39 => 12,  35 => 10,  33 => 7,  25 => 1,);
+        return array (  202 => 73,  199 => 72,  192 => 58,  189 => 57,  182 => 77,  180 => 72,  172 => 66,  163 => 64,  159 => 63,  156 => 62,  154 => 57,  149 => 54,  146 => 53,  137 => 43,  133 => 42,  129 => 41,  125 => 39,  122 => 38,  110 => 29,  104 => 27,  102 => 26,  99 => 25,  96 => 24,  90 => 12,  83 => 8,  80 => 7,  75 => 81,  73 => 53,  66 => 48,  64 => 38,  60 => 36,  58 => 24,  52 => 21,  42 => 13,  40 => 12,  36 => 10,  34 => 7,  26 => 1,);
     }
 }
