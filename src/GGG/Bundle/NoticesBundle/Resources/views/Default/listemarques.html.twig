@@ -27,7 +27,7 @@ Toutes les marques
 
 <ul>
 {% for marque in marques %}
-<li><a href="{{ path('ggg_notices_marques_nom',{ 'nom': marque.nom }) }}">{{ marque.nom }}</a></li>
+<li><a href="{{ path('ggg_notices_marques_nom',{ 'nom': marque.nom }) }}">{{ marque.nom|upper }}  {% if marque.logo %}<img src="/bundles/gggnotices/images/{{ marque.logo }}.jpg" alt="logo {{ marque.nom }}"/>{% endif %}</a></li>
 {% endfor %}
 </ul>
 

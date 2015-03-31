@@ -25,7 +25,7 @@ Toutes les catégories
 
 <ul>
 {% for categorie in categories %}
-<li><a href="{{ path('ggg_notices_categories_nom',{ 'nom': categorie.nom }) }}">{{ categorie.nom }}</a></li>
+<li><a href="{{ path('ggg_notices_categories_nom',{ 'nom': categorie.nom }) }}">{{ categorie.nom|upper }}</a></li>
 {% endfor %}
 <li><a href="{{ path('ggg_notices_categories_nom',{ 'nom': 'toto' }) }}">toto</a></li>
 </ul>

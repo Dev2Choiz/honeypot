@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Marque
  *
- * @ORM\Table()
+ * @ORM\Table(name="marques")
  * @ORM\Entity(repositoryClass="GGG\Bundle\NoticesBundle\Entity\MarqueRepository")
  */
 class Marque
@@ -28,6 +28,12 @@ class Marque
      */
     private $nom;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo", type="string", length=255)
+     */
+    private $logo;
 
     /**
      * Get id

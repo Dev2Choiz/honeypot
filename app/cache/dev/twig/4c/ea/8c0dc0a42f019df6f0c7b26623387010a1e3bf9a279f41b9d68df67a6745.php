@@ -103,7 +103,15 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
             echo "<li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ggg_notices_marques_nom", array("nom" => $this->getAttribute($context["marque"], "nom", array()))), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["marque"], "nom", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["marque"], "nom", array())), "html", null, true);
+            echo "  ";
+            if ($this->getAttribute($context["marque"], "logo", array())) {
+                echo "<img src=\"/bundles/gggnotices/images/";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["marque"], "logo", array()), "html", null, true);
+                echo ".jpg\" alt=\"logo ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["marque"], "nom", array()), "html", null, true);
+                echo "\"/>";
+            }
             echo "</a></li>
 ";
         }
@@ -138,6 +146,6 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
 
     public function getDebugInfo()
     {
-        return array (  125 => 19,  122 => 18,  114 => 32,  103 => 30,  99 => 29,  95 => 27,  86 => 24,  83 => 23,  79 => 22,  76 => 21,  74 => 18,  71 => 17,  68 => 16,  61 => 12,  58 => 11,  51 => 7,  48 => 6,  43 => 3,  40 => 2,  11 => 1,);
+        return array (  133 => 19,  130 => 18,  122 => 32,  103 => 30,  99 => 29,  95 => 27,  86 => 24,  83 => 23,  79 => 22,  76 => 21,  74 => 18,  71 => 17,  68 => 16,  61 => 12,  58 => 11,  51 => 7,  48 => 6,  43 => 3,  40 => 2,  11 => 1,);
     }
 }

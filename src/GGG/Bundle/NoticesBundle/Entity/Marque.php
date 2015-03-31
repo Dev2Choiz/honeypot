@@ -28,6 +28,12 @@ class Marque
      */
     private $nom;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo", type="string", length=255)
+     */
+    private $logo;
 
     /**
      * Get id
@@ -60,5 +66,28 @@ class Marque
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set logo
+     *
+     * @param string $logo
+     * @return Marque
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Get logo
+     *
+     * @return string 
+     */
+    public function getLogo()
+    {
+        return $this->logo;
     }
 }
