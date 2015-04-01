@@ -23,6 +23,7 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
             'header' => array($this, 'block_header'),
             'wrapper' => array($this, 'block_wrapper'),
             'h1' => array($this, 'block_h1'),
+            'js' => array($this, 'block_js'),
         );
     }
 
@@ -93,13 +94,15 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 27
         echo "
+<div class=\"gauche\">
+
 <ul>
 ";
-        // line 29
+        // line 31
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "marques"));
         foreach ($context['_seq'] as $context["_key"] => $context["marque"]) {
-            // line 30
+            // line 32
             echo "<li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ggg_notices_marques_nom", array("nom" => $this->getAttribute($context["marque"], "nom", array()))), "html", null, true);
             echo "\">";
@@ -118,10 +121,10 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['marque'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 34
         echo "</ul>
 
-
+</div>
 
 ";
     }
@@ -131,6 +134,16 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
     {
         // line 19
         echo "<h1>Retrouver votre matériel en commençant par la marque</h1>
+";
+    }
+
+    // line 40
+    public function block_js($context, array $blocks = array())
+    {
+        // line 41
+        echo "<script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/gggnotices/js/resize_img.js"), "html", null, true);
+        echo "\"></script>
 ";
     }
 
@@ -146,6 +159,6 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
 
     public function getDebugInfo()
     {
-        return array (  133 => 19,  130 => 18,  122 => 32,  103 => 30,  99 => 29,  95 => 27,  86 => 24,  83 => 23,  79 => 22,  76 => 21,  74 => 18,  71 => 17,  68 => 16,  61 => 12,  58 => 11,  51 => 7,  48 => 6,  43 => 3,  40 => 2,  11 => 1,);
+        return array (  144 => 41,  141 => 40,  136 => 19,  133 => 18,  125 => 34,  106 => 32,  102 => 31,  96 => 27,  87 => 24,  84 => 23,  80 => 22,  77 => 21,  75 => 18,  72 => 17,  69 => 16,  62 => 12,  59 => 11,  52 => 7,  49 => 6,  44 => 3,  41 => 2,  11 => 1,);
     }
 }

@@ -17,6 +17,7 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
             'wrapper' => array($this, 'block_wrapper'),
             'h1' => array($this, 'block_h1'),
             'content' => array($this, 'block_content'),
+            'js' => array($this, 'block_js'),
         );
     }
 
@@ -71,6 +72,11 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
         // line 52
         $this->displayBlock('wrapper', $context, $blocks);
         // line 80
+        echo "
+";
+        // line 81
+        $this->displayBlock('js', $context, $blocks);
+        // line 83
         echo "</body>
 </html>";
     }
@@ -204,6 +210,11 @@ LAYOUT DE BASE
 ";
     }
 
+    // line 81
+    public function block_js($context, array $blocks = array())
+    {
+    }
+
     public function getTemplateName()
     {
         return "GGGNoticesBundle:Default:layout.html.twig";
@@ -216,6 +227,6 @@ LAYOUT DE BASE
 
     public function getDebugInfo()
     {
-        return array (  201 => 72,  198 => 71,  191 => 57,  188 => 56,  181 => 76,  179 => 71,  171 => 65,  162 => 63,  158 => 62,  155 => 61,  153 => 56,  148 => 53,  145 => 52,  136 => 42,  132 => 41,  128 => 40,  124 => 38,  121 => 37,  109 => 28,  103 => 26,  101 => 25,  98 => 24,  95 => 23,  89 => 12,  82 => 8,  79 => 7,  74 => 80,  72 => 52,  65 => 47,  63 => 37,  59 => 35,  57 => 23,  51 => 20,  42 => 13,  40 => 12,  36 => 10,  34 => 7,  26 => 1,);
+        return array (  214 => 81,  207 => 72,  204 => 71,  197 => 57,  194 => 56,  187 => 76,  185 => 71,  177 => 65,  168 => 63,  164 => 62,  161 => 61,  159 => 56,  154 => 53,  151 => 52,  142 => 42,  138 => 41,  134 => 40,  130 => 38,  127 => 37,  115 => 28,  109 => 26,  107 => 25,  104 => 24,  101 => 23,  95 => 12,  88 => 8,  85 => 7,  80 => 83,  78 => 81,  75 => 80,  73 => 52,  66 => 47,  64 => 37,  60 => 35,  58 => 23,  52 => 20,  43 => 13,  41 => 12,  37 => 10,  35 => 7,  27 => 1,);
     }
 }
