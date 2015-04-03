@@ -25,12 +25,18 @@ Toutes les marques
 </p>
 {% endfor %}
 
+<div class="gauche">
+
 <ul>
 {% for marque in marques %}
-<li><a href="{{ path('ggg_notices_marques_nom',{ 'nom': marque.nom }) }}">{{ marque.nom }}</a></li>
+<li><a href="{{ path('ggg_notices_marques_nom',{ 'nom': marque.nom }) }}">{{ marque.nom|upper }}  {% if marque.logo %}<img src="/bundles/gggnotices/images/{{ marque.logo }}.jpg" alt="logo {{ marque.nom }}"/>{% endif %}</a></li>
 {% endfor %}
 </ul>
 
-
+</div>
 
 {% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ asset('bundles/gggnotices/js/resize_img.js') }}"></script>
+{% endblock  %}

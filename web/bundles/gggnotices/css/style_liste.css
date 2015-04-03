@@ -30,9 +30,9 @@ header{
 	border-width: 0 0 1px 0;
 	border-style: solid;
 	border-color: #559;
-	font-family: "Times New Roman", "Calibri Light", sans-serif;
+	font-family: "Verdana", "Times New Roman", "Calibri Light", sans-serif;
 	margin: 0px;
-	background-color: #00A0C5;
+	background-color: rgba(169,207,226,0.3);
 	background: -webkit-linear-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.5), rgba(169,207,226,0.3), white); /* For Safari 5.1 to 6.0 */
   	background: -o-linear-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.5), rgba(169,207,226,0.3), white); /* For Opera 11.1 to 12.0 */
  	background: -moz-linear-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.5), rgba(169,207,226,0.3), white); /* For Firefox 3.6 to 15 */
@@ -47,25 +47,19 @@ header img{
 	vertical-align: middle;
 }
 
-.wrapper{
-	margin-right: auto;
-	margin-left: auto;
-	width: 80%;
-	font-family: "Calibri Light", sans-serif;
-	font-size: 16px;
-	text-align: center;
+
+header .titre{
+	font-family: "Verdana", "Calibri Light", sans-serif;
 }
 
-.menu{
-	width: 50%;
-	margin-left: 60%;
-}
+
+
 
 .menu ul{
 	list-style-type: none;
 	text-align: right;
 	width: 50%;
-	right: 10%;
+	margin-left: 30%;
 }
 
 .menu li{
@@ -87,16 +81,66 @@ header img{
 	color: #D1003E;
 }
 
-ul{
+
+
+.wrapper{
+	margin: 0px;
+	width: 100%;
+	min-height: 800px;
+	font-family: "Verdana", "Times New Roman", "Calibri Light", sans-serif;
+	padding: 0px;
+	font-size: 22px;
+
+	background: -webkit-linear-gradient(white, rgba(169,207,226,0.2), rgba(169,207,240,0.4), rgba(169,207,226,0.2), white); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(white, rgba(169,207,226,0.2), rgba(169,207,240,0.4), rgba(169,207,226,0.2), white); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-linear-gradient(white, rgba(169,207,226,0.2), rgba(169,207,240,0.4), rgba(169,207,226,0.2), white); /* For Firefox 3.6 to 15 */
+ 	background: linear-gradient(white, rgba(169,207,226,0.2), rgba(169,207,240,0.4), rgba(169,207,226,0.2), white);
+	/*background-image: url('/bundles/gggnotices/images/fond.png');
+	background-size: 60% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 0% 0px;*/
+}
+
+
+.gauche{
+	display: inline-block;
+	width: 50%;
+	min-height: 800px;
+	border: 1px solid transparent;
+	border-top-right-radius: 1000px;
+	border-bottom-right-radius: 1000px;
+	background: -webkit-radial-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.6), rgba(169,207,226,0.3), white); /* For Safari 5.1 to 6.0 */
+  	background: -o-radial-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.6), rgba(169,207,226,0.3), white); /* For Opera 11.1 to 12.0 */
+ 	background: -moz-radial-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.6), rgba(169,207,226,0.3), white); /* For Firefox 3.6 to 15 */
+ 	background: radial-gradient(white, rgba(169,207,226,0.3), rgba(169,207,240,0.6), rgba(169,207,226,0.3), white);
+ 	box-shadow: 150px 0px 50px rgba(169,207,226,0.2);
+}
+
+
+
+.wrapper ul{
 	list-style-type: none;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.wrapper ul li{
+	margin: 0px 0px 20px 0px;
+	padding: 5px;
 	text-align: left;
+}
+
+.wrapper ul li img{
+	display: inline-block;
+	vertical-align: middle;
 }
 
 h1{
 	color: #E7A;
 	font-size: 18px;
 	padding: 2px;
-	margin: 5px;
+	margin: 0px;
 	text-align: left;
 }
 

@@ -103,7 +103,7 @@ class __TwigTemplate_03182b5b1afe6cae0a73f6657b21f5412160c86d4efbf4afc6bcaf3d36f
             echo "<li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ggg_notices_categories_nom", array("nom" => $this->getAttribute($context["categorie"], "nom", array()))), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["categorie"], "nom", array()), "html", null, true);
+            echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["categorie"], "nom", array())), "html", null, true);
             echo "</a></li>
 ";
         }

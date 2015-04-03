@@ -64,10 +64,10 @@ class Marque extends \GGG\Bundle\NoticesBundle\Entity\Marque implements \Doctrin
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'id', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'nom');
+            return array('__isInitialized__', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'id', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'nom', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'logo');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'id', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'nom');
+        return array('__isInitialized__', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'id', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'nom', '' . "\0" . 'GGG\\Bundle\\NoticesBundle\\Entity\\Marque' . "\0" . 'logo');
     }
 
     /**
@@ -208,6 +208,28 @@ class Marque extends \GGG\Bundle\NoticesBundle\Entity\Marque implements \Doctrin
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNom', array());
 
         return parent::getNom();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLogo($logo)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLogo', array($logo));
+
+        return parent::setLogo($logo);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLogo()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLogo', array());
+
+        return parent::getLogo();
     }
 
 }
