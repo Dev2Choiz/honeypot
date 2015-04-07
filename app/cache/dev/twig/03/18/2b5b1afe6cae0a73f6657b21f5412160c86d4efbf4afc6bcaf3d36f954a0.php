@@ -93,13 +93,16 @@ class __TwigTemplate_03182b5b1afe6cae0a73f6657b21f5412160c86d4efbf4afc6bcaf3d36f
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 25
         echo "
+
+<div class=\"gauche\">
+
 <ul>
 ";
-        // line 27
+        // line 30
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "categories"));
         foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
-            // line 28
+            // line 31
             echo "<li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ggg_notices_categories_nom", array("nom" => $this->getAttribute($context["categorie"], "nom", array()))), "html", null, true);
             echo "\">";
@@ -110,12 +113,13 @@ class __TwigTemplate_03182b5b1afe6cae0a73f6657b21f5412160c86d4efbf4afc6bcaf3d36f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 33
         echo "<li><a href=\"";
         echo $this->env->getExtension('routing')->getPath("ggg_notices_categories_nom", array("nom" => "toto"));
         echo "\">toto</a></li>
 </ul>
 
+</div>
 
 
 ";
@@ -141,6 +145,6 @@ class __TwigTemplate_03182b5b1afe6cae0a73f6657b21f5412160c86d4efbf4afc6bcaf3d36f
 
     public function getDebugInfo()
     {
-        return array (  128 => 17,  125 => 16,  114 => 30,  103 => 28,  99 => 27,  95 => 25,  86 => 22,  83 => 21,  79 => 20,  76 => 19,  74 => 16,  71 => 15,  68 => 14,  61 => 11,  58 => 10,  51 => 7,  48 => 6,  43 => 3,  40 => 2,  11 => 1,);
+        return array (  132 => 17,  129 => 16,  117 => 33,  106 => 31,  102 => 30,  95 => 25,  86 => 22,  83 => 21,  79 => 20,  76 => 19,  74 => 16,  71 => 15,  68 => 14,  61 => 11,  58 => 10,  51 => 7,  48 => 6,  43 => 3,  40 => 2,  11 => 1,);
     }
 }

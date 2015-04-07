@@ -16,25 +16,36 @@
 <body>
 
 <header>
-<span class="titre">MON-ASPIRATEUR.FR</span>
-<img src="{{ asset('bundles/gggnotices/images/logo.jpg') }}" alt="logo" title="bienvenue sur mon-aspirateur.fr"/>
+<img src="{{ asset('bundles/gggnotices/images/logo_happy.png') }}" 
+	 alt="logo" 
+	 title="bienvenue sur mon-aspirateur.fr"/>
+<span class="titre">Faîtes durer vos appareils et économisez</span>
+
 
 
 {% block connexion %}
+<div class="log">
 
 {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
 <p>Bienvenue {{ app.user.username }}</p>
 {% else %}
+
 <form action="{{ path('login_check') }}" method="post">
 <input type="text" name="_username" placeholder="pseudo ou mail" />
 <input type="password" name="_password" placeholder="password" />
 <input type="submit" value="Connexion"/>
+vous n'avez pas encore de compte ? <a href=" {{ path('ggg_user_inscription') }}" title="page des inscriptions">inscrivez-vous</a>
 </form>
+
+
 {% endif %}
+
+</div>
 {% endblock %}
 
 
 {% block menu %}
+
 <div class="menu">
 <ul>
 <li><a href="{{ path('ggg_notices_homepage') }}" 	title="retour à l'accueil"/>Accueil</a></li>
@@ -55,7 +66,7 @@
 
 {% block h1 %}
 <h1>
-Trouver la notice de votre objet en 3 clics
+Trouvez la notice de votre appareil en 3 clics
 </h1>
 {% endblock %}
 

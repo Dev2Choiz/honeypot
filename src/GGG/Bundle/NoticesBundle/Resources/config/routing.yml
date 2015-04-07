@@ -24,3 +24,4 @@ ggg_notices_appareil_id:
     defaults: { _controller: GGGNoticesBundle:Default:appareil }
 
 
+

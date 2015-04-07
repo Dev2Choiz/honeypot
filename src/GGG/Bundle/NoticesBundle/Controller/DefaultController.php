@@ -69,8 +69,7 @@ class DefaultController extends Controller
         $form = $this->get('form.factory')->createBuilder('form');
 
         /* on crée le contenu du formulaire, ici un bouton select ayant la liste des catégories par nom grâce à $choix */
-        $form->add('marques','choice',array('choices' => $choix))
-             ->add('go','submit');
+        $form->add('nom','choice',array('choices' => $choix));
 
         $form = $form->getForm();
 
@@ -81,7 +80,7 @@ class DefaultController extends Controller
         $marqueNom = $request->request->get('form');
         
         if( $marqueNom ){
-            $marqueNom = $marqueNom['marques'];
+            $marqueNom = $marqueNom['nom'];
 
             if( $marqueNom == null ){
                 $marqueNom = 'Aucune marque sélectionnée';
@@ -157,8 +156,7 @@ class DefaultController extends Controller
         $form = $this->get('form.factory')->createBuilder('form');
 
         /* on crée le contenu du formulaire, ici un bouton select ayant la liste des catégories par nom grâce à $choix */
-        $form->add('categories','choice',array('choices' => $choix))
-             ->add('go','submit');
+        $form->add('nom','choice',array('choices' => $choix));
 
         $form = $form->getForm();
 
@@ -171,7 +169,7 @@ class DefaultController extends Controller
 
         if( $categorieNom ){
 
-        $categorieNom = $categorieNom['categories'];
+        $categorieNom = $categorieNom['nom'];
 
             if( $categorieNom == null ){
                 $categorieNom = 'Aucune catégorie sélectionnée';

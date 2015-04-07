@@ -8,7 +8,9 @@
 {% block wrapper %}
 
 {% block h1 %}
-<h1>Voici tous les appareils de la marque {{ nom }}</h1>
+
+<h1>Trouvez la notice de votre appareil {{ nom|upper }}</h1>
+
 {% endblock %}
 
 
@@ -16,8 +18,11 @@
 <p class="erreur">{{ message|raw }}</p>
 {% endfor %}
 
-<h3>Filtrer par categories</h3>
-{{ form(form_filtre) }}
+{{ form_start(form_filtre) }}
+<h3>{{ form_label(form_filtre.nom,'Filtre par catégories') }}</h3>
+{{ form_widget(form_filtre.nom) }}
+{{ form_end(form_filtre) }}
+
 
 {% if categorieNom is not null %}
 <p class="info">{{ categorieNom|capitalize }} de la marque {{ nom|upper }}</p>
@@ -36,3 +41,7 @@
 
 
 {% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ asset('bundles/gggnotices/js/formulaires.js') }}"></script>
+{% endblock  %}

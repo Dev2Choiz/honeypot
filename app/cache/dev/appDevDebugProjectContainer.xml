@@ -1746,7 +1746,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>551424018039a</argument>
+            <argument>5523f3996dd9f</argument>
           </service>
         </argument>
         <argument type="service">
@@ -2016,7 +2016,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>551424018039a</argument>
+            <argument>5523f3996dd9f</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2534,6 +2534,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="GGGNoticesBundle">GGG\Bundle\NoticesBundle\Entity</argument>
+              <argument key="GGGUserBundle">GGG\Bundle\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2554,10 +2555,23 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\honeypot\src\GGG\Bundle\NoticesBundle\Entity</argument>
+                        <argument>C:\wamp\www\honeypot\src\GGG\Bundle\UserBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>GGG\Bundle\NoticesBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\honeypot\src\GGG\Bundle\NoticesBundle\Entity</argument>
+                        <argument>C:\wamp\www\honeypot\src\GGG\Bundle\UserBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>GGG\Bundle\UserBundle\Entity</argument>
                 </call>
               </service>
             </argument>
