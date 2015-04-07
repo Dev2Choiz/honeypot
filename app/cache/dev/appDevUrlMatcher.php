@@ -124,7 +124,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // ggg_user_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ggg_user_homepage')), array (  '_controller' => 'GGGUserBundle:Default:index',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ggg_user_homepage')), array (  '_controller' => 'GGG\\Bundle\\UserBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // ggg_notices_homepage
@@ -165,6 +165,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // ggg_notices_appareil_id
         if (0 === strpos($pathinfo, '/appareil') && preg_match('#^/appareil/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'ggg_notices_appareil_id')), array (  '_controller' => 'GGG\\Bundle\\NoticesBundle\\Controller\\DefaultController::appareilAction',));
+        }
+
+        // ggg_user_inscription
+        if ($pathinfo === '/inscription') {
+            return array (  '_controller' => 'GGG\\Bundle\\UserBundle\\Controller\\DefaultController::inscriptionAction',  '_route' => 'ggg_user_inscription',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

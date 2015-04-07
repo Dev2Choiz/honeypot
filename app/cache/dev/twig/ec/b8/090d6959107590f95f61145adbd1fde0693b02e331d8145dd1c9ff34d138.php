@@ -21,6 +21,7 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
             'title' => array($this, 'block_title'),
             'wrapper' => array($this, 'block_wrapper'),
             'h1' => array($this, 'block_h1'),
+            'js' => array($this, 'block_js'),
         );
     }
 
@@ -51,15 +52,15 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
 ";
         // line 10
         $this->displayBlock('h1', $context, $blocks);
-        // line 13
+        // line 15
         echo "
 
 ";
-        // line 15
+        // line 17
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session", array()), "flashbag", array()), "get", array(0 => "erreur"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 16
+            // line 18
             echo "<p class=\"erreur\">";
             echo $context["message"];
             echo "</p>
@@ -68,18 +69,31 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 18
-        echo "
-<h3>Filtrer par marques</h3>
-";
         // line 20
-        echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "form_filtre"), 'form');
+        echo "
+";
+        // line 21
+        echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "form_filtre"), 'form_start');
+        echo "
+<h3>";
+        // line 22
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form_filtre"), "nom", array()), 'label', array("label" => "Filtre par marques"));
+        echo "</h3>
+";
+        // line 23
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form_filtre"), "nom", array()), 'widget');
+        echo "
+";
+        // line 24
+        echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "form_filtre"), 'form_end');
         echo "
 
+
+
 ";
-        // line 22
+        // line 28
         if ( !(null === $this->getContext($context, "marqueNom"))) {
-            // line 23
+            // line 29
             echo "<p class=\"info\">";
             echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getContext($context, "nom")), "html", null, true);
             echo " de la marque ";
@@ -87,29 +101,29 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
             echo "</p>
 ";
         }
-        // line 25
+        // line 31
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "appareils"));
         foreach ($context['_seq'] as $context["_key"] => $context["appareil"]) {
-            // line 26
+            // line 32
             echo "<a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ggg_notices_appareil_id", array("id" => $this->getAttribute($context["appareil"], "id", array()))), "html", null, true);
             echo "\">
 <div class=\"appareil\">
 <img src=\"/bundles/gggnotices/images/";
-            // line 28
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["appareil"], "photo", array()), "html", null, true);
             echo ".jpg\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["appareil"], "nom", array()), "html", null, true);
             echo "\"/>
 <strong class=\"nom\">";
-            // line 29
+            // line 35
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($this->getAttribute($context["appareil"], "marque", array()), "nom", array())), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getAttribute($context["appareil"], "nom", array())), "html", null, true);
             echo "</strong> 
 <!--p class=\"description\">";
-            // line 30
+            // line 36
             echo twig_escape_filter($this->env, $this->getAttribute($context["appareil"], "description", array()), "html", null, true);
             echo "</p-->
 </div>
@@ -119,10 +133,10 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['appareil'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 40
         echo "
 <!--a href=\"";
-        // line 35
+        // line 41
         echo $this->env->getExtension('routing')->getPath("ggg_notices_appareil_id", array("id" => 50));
         echo "\">toto</a-->
 
@@ -134,9 +148,22 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
     public function block_h1($context, array $blocks = array())
     {
         // line 11
-        echo "<h1>Voici tous les appareils de la categorie ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "nom"), "html", null, true);
+        echo "
+<h1>Trouvez votre la notice de votre ";
+        // line 12
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, $this->getContext($context, "nom")), "html", null, true);
         echo "</h1>
+
+";
+    }
+
+    // line 46
+    public function block_js($context, array $blocks = array())
+    {
+        // line 47
+        echo "<script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/gggnotices/js/formulaires.js"), "html", null, true);
+        echo "\"></script>
 ";
     }
 
@@ -152,6 +179,6 @@ class __TwigTemplate_ecb8090d6959107590f95f61145adbd1fde0693b02e331d8145dd1c9ff3
 
     public function getDebugInfo()
     {
-        return array (  137 => 11,  134 => 10,  126 => 35,  123 => 34,  113 => 30,  107 => 29,  101 => 28,  95 => 26,  91 => 25,  83 => 23,  81 => 22,  76 => 20,  72 => 18,  63 => 16,  59 => 15,  55 => 13,  53 => 10,  50 => 9,  47 => 8,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  164 => 47,  161 => 46,  154 => 12,  151 => 11,  148 => 10,  140 => 41,  137 => 40,  127 => 36,  121 => 35,  115 => 34,  109 => 32,  105 => 31,  97 => 29,  95 => 28,  88 => 24,  84 => 23,  80 => 22,  76 => 21,  73 => 20,  64 => 18,  60 => 17,  56 => 15,  54 => 10,  51 => 9,  48 => 8,  42 => 3,  39 => 2,  11 => 1,);
     }
 }

@@ -26,6 +26,7 @@ header{
 	color: #22A;
 	font-size: 30px;
 	padding: 0px;
+	padding: 15px 0px 0px 0px;
 	text-align: center;
 	border-width: 0 0 1px 0;
 	border-style: solid;
@@ -40,20 +41,26 @@ header{
 }
 
 header img{
-	width: 128px;
-	height: 128px;
+	width: 150px;
+	height: 58px;
 	display: inline-block;
-	margin-left: 20px;
+	margin-right: 20px;
 	vertical-align: middle;
 }
 
-
 header .titre{
-	font-family: "Verdana", "Calibri Light", sans-serif;
+	font-family: "Verdana", sans-serif;
+	color: #D1003E;
+	font-style: italic;
+	font-size: 20px;
 }
 
-
-
+header .log{
+	text-align: top;
+	display: inline-block;
+	width: 20%;
+	font-size: 15px;
+}
 
 .menu ul{
 	list-style-type: none;
@@ -119,22 +126,38 @@ header .titre{
 
 
 
-.wrapper ul{
+.gauche ul{
 	list-style-type: none;
-	text-align: center;
-	margin-top: 10px;
+	margin-top: 30px;
+	margin-left: 30px;
 }
 
-.wrapper ul li{
+.gauche ul li{
 	margin: 0px 0px 20px 0px;
 	padding: 5px;
 	text-align: left;
 }
 
-.wrapper ul li img{
+.gauche ul li img{
 	display: inline-block;
 	vertical-align: middle;
 }
+
+
+.gauche a{
+	text-decoration: underline;
+
+}
+
+.gauche a:hover{
+	text-decoration: none;
+
+}
+
+.gauche a:visited{
+	text-decoration: none;
+}
+
 
 h1{
 	color: #E7A;

@@ -6,9 +6,14 @@ ggg_notices:
     resource: "@GGGNoticesBundle/Resources/config/routing.yml"
     prefix:   /
 
+ggg_user_inscription:
+    pattern: /inscription
+    defaults : { _controller: GGGUserBundle:Default:inscription }
+
 login:
     pattern:  /login
     defaults: { _controller: GGGUserBundle:Security:login }
+
 
 login_check:
     pattern:  /login_check

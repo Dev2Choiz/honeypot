@@ -46,37 +46,40 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
 <body>
 
 <header>
-<span class=\"titre\">MON-ASPIRATEUR.FR</span>
 <img src=\"";
-        // line 20
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/gggnotices/images/logo.jpg"), "html", null, true);
-        echo "\" alt=\"logo\" title=\"bienvenue sur mon-aspirateur.fr\"/>
+        // line 19
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/gggnotices/images/logo_happy.png"), "html", null, true);
+        echo "\" 
+\t alt=\"logo\" 
+\t title=\"bienvenue sur mon-aspirateur.fr\"/>
+<span class=\"titre\">Faîtes durer vos appareils et économisez</span>
+
 
 
 ";
-        // line 23
+        // line 26
         $this->displayBlock('connexion', $context, $blocks);
-        // line 35
+        // line 45
         echo "
 
 ";
-        // line 37
-        $this->displayBlock('menu', $context, $blocks);
         // line 47
+        $this->displayBlock('menu', $context, $blocks);
+        // line 58
         echo "
 
 </header>
 
 <div class=\"wrapper\">
 ";
-        // line 52
+        // line 63
         $this->displayBlock('wrapper', $context, $blocks);
-        // line 80
+        // line 91
         echo "
 ";
-        // line 81
+        // line 92
         $this->displayBlock('js', $context, $blocks);
-        // line 83
+        // line 94
         echo "</body>
 </html>";
     }
@@ -97,48 +100,62 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
         echo "Honeypot-1";
     }
 
-    // line 23
+    // line 26
     public function block_connexion($context, array $blocks = array())
     {
-        // line 24
-        echo "
+        // line 27
+        echo "<div class=\"log\">
+
 ";
-        // line 25
+        // line 29
         if (($this->env->getExtension('security')->isGranted("ROLE_USER") || $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
-            // line 26
+            // line 30
             echo "<p>Bienvenue ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "app"), "user", array()), "username", array()), "html", null, true);
             echo "</p>
 ";
         } else {
-            // line 28
-            echo "<form action=\"";
+            // line 32
+            echo "
+<form action=\"";
+            // line 33
             echo $this->env->getExtension('routing')->getPath("login_check");
             echo "\" method=\"post\">
 <input type=\"text\" name=\"_username\" placeholder=\"pseudo ou mail\" />
 <input type=\"password\" name=\"_password\" placeholder=\"password\" />
 <input type=\"submit\" value=\"Connexion\"/>
+vous n'avez pas encore de compte ? <a href=\" ";
+            // line 37
+            echo $this->env->getExtension('routing')->getPath("ggg_user_inscription");
+            echo "\" title=\"page des inscriptions\">inscrivez-vous</a>
 </form>
+
+
 ";
         }
+        // line 42
+        echo "
+</div>
+";
     }
 
-    // line 37
+    // line 47
     public function block_menu($context, array $blocks = array())
     {
-        // line 38
-        echo "<div class=\"menu\">
+        // line 48
+        echo "
+<div class=\"menu\">
 <ul>
 <li><a href=\"";
-        // line 40
+        // line 51
         echo $this->env->getExtension('routing')->getPath("ggg_notices_homepage");
         echo "\" \ttitle=\"retour à l'accueil\"/>Accueil</a></li>
 <li><a href=\"";
-        // line 41
+        // line 52
         echo $this->env->getExtension('routing')->getPath("ggg_notices_marques");
         echo "\" \ttitle=\"trier par marques\">Marques</a></li>
 <li><a href=\"";
-        // line 42
+        // line 53
         echo $this->env->getExtension('routing')->getPath("ggg_notices_categories");
         echo "\"  title=\"trier par catégories\">Catégories</a></li>
 </ul>
@@ -147,24 +164,24 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
 ";
     }
 
-    // line 52
+    // line 63
     public function block_wrapper($context, array $blocks = array())
     {
-        // line 53
+        // line 64
         echo "
 
 
 ";
-        // line 56
+        // line 67
         $this->displayBlock('h1', $context, $blocks);
-        // line 61
+        // line 72
         echo "
 ";
-        // line 62
+        // line 73
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "app"), "session", array()), "flashbag", array()), "get", array(0 => "erreur"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 63
+            // line 74
             echo "<p class=\"erreur\">";
             echo $context["message"];
             echo "</p>
@@ -173,7 +190,7 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 65
+        // line 76
         echo "
 
 
@@ -181,36 +198,36 @@ class __TwigTemplate_b417d30fd57b76bf3ef91a658566bb4dae82f91c911cececf6de0dee5c5
 
 
 ";
-        // line 71
+        // line 82
         $this->displayBlock('content', $context, $blocks);
-        // line 76
+        // line 87
         echo "
 </div><!-- fin wrapper-->
 
 ";
     }
 
-    // line 56
+    // line 67
     public function block_h1($context, array $blocks = array())
     {
-        // line 57
+        // line 68
         echo "<h1>
-Trouver la notice de votre objet en 3 clics
+Trouvez la notice de votre appareil en 3 clics
 </h1>
 ";
     }
 
-    // line 71
+    // line 82
     public function block_content($context, array $blocks = array())
     {
-        // line 72
+        // line 83
         echo "
 LAYOUT DE BASE
 
 ";
     }
 
-    // line 81
+    // line 92
     public function block_js($context, array $blocks = array())
     {
     }
@@ -227,6 +244,6 @@ LAYOUT DE BASE
 
     public function getDebugInfo()
     {
-        return array (  214 => 81,  207 => 72,  204 => 71,  197 => 57,  194 => 56,  187 => 76,  185 => 71,  177 => 65,  168 => 63,  164 => 62,  161 => 61,  159 => 56,  154 => 53,  151 => 52,  142 => 42,  138 => 41,  134 => 40,  130 => 38,  127 => 37,  115 => 28,  109 => 26,  107 => 25,  104 => 24,  101 => 23,  95 => 12,  88 => 8,  85 => 7,  80 => 83,  78 => 81,  75 => 80,  73 => 52,  66 => 47,  64 => 37,  60 => 35,  58 => 23,  52 => 20,  43 => 13,  41 => 12,  37 => 10,  35 => 7,  27 => 1,);
+        return array (  231 => 92,  224 => 83,  221 => 82,  214 => 68,  211 => 67,  204 => 87,  202 => 82,  194 => 76,  185 => 74,  181 => 73,  178 => 72,  176 => 67,  171 => 64,  168 => 63,  159 => 53,  155 => 52,  151 => 51,  146 => 48,  143 => 47,  137 => 42,  129 => 37,  122 => 33,  119 => 32,  113 => 30,  111 => 29,  107 => 27,  104 => 26,  98 => 12,  91 => 8,  88 => 7,  83 => 94,  81 => 92,  78 => 91,  76 => 63,  69 => 58,  67 => 47,  63 => 45,  61 => 26,  51 => 19,  43 => 13,  41 => 12,  37 => 10,  35 => 7,  27 => 1,);
     }
 }

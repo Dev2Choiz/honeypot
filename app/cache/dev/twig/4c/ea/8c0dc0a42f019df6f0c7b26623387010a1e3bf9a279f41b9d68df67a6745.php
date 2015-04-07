@@ -114,6 +114,10 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
                 echo ".jpg\" alt=\"logo ";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["marque"], "nom", array()), "html", null, true);
                 echo "\"/>";
+            } else {
+                echo "<img src=\"/bundles/gggnotices/images/erreur_logo_marque.png\" alt=\"pas de logo disponible pour la marque ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["marque"], "nom", array()), "html", null, true);
+                echo "\"/>";
             }
             echo "</a></li>
 ";
@@ -159,6 +163,6 @@ class __TwigTemplate_4cea8c0dc0a42f019df6f0c7b26623387010a1e3bf9a279f41b9d68df67
 
     public function getDebugInfo()
     {
-        return array (  144 => 41,  141 => 40,  136 => 19,  133 => 18,  125 => 34,  106 => 32,  102 => 31,  96 => 27,  87 => 24,  84 => 23,  80 => 22,  77 => 21,  75 => 18,  72 => 17,  69 => 16,  62 => 12,  59 => 11,  52 => 7,  49 => 6,  44 => 3,  41 => 2,  11 => 1,);
+        return array (  148 => 41,  145 => 40,  140 => 19,  137 => 18,  129 => 34,  106 => 32,  102 => 31,  96 => 27,  87 => 24,  84 => 23,  80 => 22,  77 => 21,  75 => 18,  72 => 17,  69 => 16,  62 => 12,  59 => 11,  52 => 7,  49 => 6,  44 => 3,  41 => 2,  11 => 1,);
     }
 }
