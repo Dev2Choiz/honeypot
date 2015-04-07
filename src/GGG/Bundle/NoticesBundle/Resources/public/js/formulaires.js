@@ -23,5 +23,12 @@ if( window.addEventListener ){
 		}
 	}
 }
+else if( window.attachEvent ){
+	for ( i = 0 ; i < document.getElementsByTagName('form').length ; i++ ){
+		if ( document.getElementsByTagName('form')[i].name == 'form' ){
+			document.getElementsByTagName('form')[i].attachEvent('onchange',formPOST);
+		}
+	}
+}
 
 -->

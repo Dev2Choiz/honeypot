@@ -57,7 +57,7 @@ var img;
 if ( window.addEventListener ){
 window.addEventListener('load',setImgStyle,false);
 }
-else if ( window.attachevent ){
-window.atatchEvent('onload',setImgStyle);
+else if ( window.attachEvent ){
+window.attachEvent('onload',setImgStyle);
 }
 -->
